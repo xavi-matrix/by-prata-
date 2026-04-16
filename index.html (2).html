@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BY PRATA — Joias de Prata de Alto Padrão</title>
+  <meta name="description" content="Joias de prata artesanais de alto padrão. Cada peça é forjada com técnicas tradicionais para atravessar o tempo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --surface:       #131313;
+      --surface-dim:   #0e0e0e;
+      --surface-low:   #1b1b1b;
+      --surface-mid:   #1f1f1f;
+      --surface-high:  #2a2a2a;
+      --aqua:          #5adcb3;
+      --aqua-dark:     #3ab894;
+      --platinum:      #c7c6c4;
+      --on-surface:    #e2e2e2;
+      --outline:       #86948d;
+      --white5:        rgba(255,255,255,0.05);
+      --white10:       rgba(255,255,255,0.10);
+      --serif:         'Noto Serif', serif;
+      --sans:          'Manrope', sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--surface);
+      color: var(--on-surface);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ===================== NAVBAR ===================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(19,19,19,0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--white5);
+      animation: slideDown 0.6s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .nav-logo svg { color: var(--aqua); width: 28px; height: 28px; }
+
+    .nav-logo-text {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--aqua);
+      letter-spacing: 0.04em;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover { color: #fff; border-bottom-color: #fff; }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--aqua);
+      color: var(--surface);
+      padding: 0.6rem 1.4rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+
+    .nav-cta:hover { background: #fff; }
+
+    .nav-cta svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--on-surface);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 74px; left: 0; right: 0;
+      background: var(--surface-low);
+      border-bottom: 1px solid var(--white10);
+      padding: 1.5rem 2rem;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 99;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: var(--serif);
+      color: var(--aqua);
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--white5);
+    }
+
+    .mobile-menu .mobile-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--aqua);
+      color: var(--surface);
+      padding: 1rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(19,19,19,0.95) 40%, rgba(19,19,19,0.4) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      animation: fadeUp 0.9s ease 0.2s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.08;
+      color: #fff;
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-sub {
+      color: var(--platinum);
+      font-size: 1.1rem;
+      font-weight: 600;
+      max-width: 440px;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--aqua);
+      color: var(--surface);
+      padding: 1rem 2.2rem;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: background 0.4s;
+    }
+
+    .btn-primary:hover { background: #fff; }
+
+    .btn-primary svg { width: 20px; height: 20px; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 1rem 2.2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: all 0.4s;
+    }
+
+    .btn-outline:hover { border-color: var(--aqua); color: var(--aqua); }
+
+    .hero-badge {
+      display: none;
+      position: absolute;
+      bottom: 3rem; right: 3rem;
+      border-left: 1px solid rgba(90,220,179,0.3);
+      padding: 1rem 0 1rem 1.5rem;
+    }
+
+    .hero-badge-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-badge-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(90,220,179,0.6);
+      margin-top: 4px;
+    }
+
+    /* ===================== COLLECTION GRID ===================== */
+    .section { padding: 6rem 3rem; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .section-desc {
+      color: var(--outline);
+      max-width: 380px;
+      margin-top: 0.75rem;
+      line-height: 1.7;
+    }
+
+    /* ===================== PRODUCT GRID ===================== */
+    .products-bg { background: var(--surface-low); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--surface-mid);
+      border: 1px solid var(--white5);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover { transform: translateY(-4px); }
+
+    .product-card-img {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter 0.7s, transform 0.7s;
+    }
+
+    .product-card:hover .product-card-img img {
+      filter: grayscale(0%);
+      transform: scale(1.08);
+    }
+
+    .product-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
+    }
+
+    .product-card:hover .product-card-overlay { opacity: 1; }
+
+    .product-card-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--aqua);
+      color: var(--surface);
+      padding: 0.75rem 1.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transform: translateY(12px);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .product-card:hover .product-card-btn { transform: translateY(0); }
+
+    .product-card-btn:hover { background: #fff; }
+
+    .product-card-btn svg { width: 16px; height: 16px; }
+
+    .product-info {
+      padding: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .product-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .product-cat {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--outline);
+      margin-top: 0.25rem;
+    }
+
+    .product-price {
+      color: var(--aqua);
+      font-weight: 700;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    /* ===================== BRAND STORY ===================== */
+    .brand-story {
+      background: var(--surface);
+    }
+
+    .brand-story-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .brand-img-wrap {
+      position: relative;
+    }
+
+    .brand-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .brand-badge {
+      position: absolute;
+      bottom: -2.5rem;
+      right: -2.5rem;
+      background: var(--aqua);
+      padding: 2rem 2.5rem;
+      display: none;
+    }
+
+    .brand-badge span {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--surface);
+      white-space: nowrap;
+    }
+
+    .brand-text { }
+
+    .brand-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .brand-text p {
+      color: var(--outline);
+      font-weight: 300;
+      line-height: 1.85;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      color: #fff;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 2px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .brand-link:hover { color: var(--aqua); border-bottom-color: var(--aqua); }
+
+    .brand-link svg { width: 18px; height: 18px; transition: transform 0.3s; }
+
+    .brand-link:hover svg { transform: translateX(4px); }
+
+    /* ===================== TESTIMONIAL ===================== */
+    .testimonial-section {
+      background: var(--surface-dim);
+      padding: 5rem 3rem;
+      text-align: center;
+    }
+
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: #fff;
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+    }
+
+    .testimonial-author {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--outline);
+    }
+
+    /* ===================== CTA SECTION ===================== */
+    .cta-section {
+      background: var(--surface-low);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-inner .section-label { text-align: center; }
+
+    .cta-inner h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #fff;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .cta-inner p {
+      color: var(--outline);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .vendedora-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--aqua);
+      border: 1px solid rgba(90,220,179,0.3);
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--surface-dim);
+      border-top: 1px solid var(--white5);
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo-text {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--platinum);
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--aqua); }
+
+    .footer-copy {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(199,198,196,0.3);
+      margin-top: 1.5rem;
+    }
+
+    /* ===================== FLOATING BUTTONS ===================== */
+    .float-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.75rem;
+    }
+
+    .ig-float {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      color: #fff;
+      box-shadow: 0 8px 28px rgba(214,36,159,0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: popIn 0.5s ease 1.7s both;
+    }
+    .ig-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(214,36,159,0.5);
+    }
+    .ig-float svg { width: 24px; height: 24px; }
+
+    .wa-float {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #25D366;
+      color: #fff;
+      padding: 0.9rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      box-shadow: 0 8px 32px rgba(37,211,102,0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: popIn 0.5s ease 1.5s both;
+    }
+    .wa-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.45);
+    }
+    .wa-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+    @media (max-width: 900px) {
+      .float-container { bottom: 1.5rem; right: 1rem; }
+      .wa-float span { display: none; }
+      .wa-float { padding: 1rem; border-radius: 50%; }
+      .ig-float { width: 48px; height: 48px; }
+    }
+
+
+
+    /* ===================== UTILITIES ===================== */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 900px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .hero-content { padding: 0 1.5rem; }
+
+      .section { padding: 4rem 1.5rem; }
+
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+      .brand-story-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .brand-img-wrap { order: 2; }
+      .brand-text { order: 1; }
+
+      .cta-section { padding: 4rem 1.5rem; }
+
+      footer { padding: 2rem 1.5rem; }
+
+    }
+
+    @media (max-width: 540px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+    }
+
+    @media (min-width: 901px) {
+      .hero-badge { display: block; }
+      .brand-badge { display: block; }
+    }
+
+    /* ===================== GALLERY MODAL ===================== */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(13,13,13,0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      overflow-y: auto;
+      animation: galFadeIn 0.35s ease;
+    }
+    .gallery-modal.open { display: block; }
+    @keyframes galFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .gallery-modal-header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--white5);
+      display: flex; align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem; gap: 1rem; flex-wrap: wrap;
+    }
+    .gallery-modal-title { font-family: var(--serif); font-size: 1.4rem; color: #fff; }
+    .gallery-modal-close {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border: 1px solid var(--white10);
+      color: var(--on-surface); font-size: 1.4rem; transition: all 0.3s; flex-shrink: 0;
+    }
+    .gallery-modal-close:hover { border-color: var(--aqua); color: var(--aqua); }
+
+    .gallery-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .gallery-filter-btn {
+      padding: 0.45rem 1.1rem; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      border: 1px solid var(--white10); color: var(--outline); transition: all 0.25s;
+    }
+    .gallery-filter-btn:hover { border-color: var(--aqua); color: var(--aqua); }
+    .gallery-filter-btn.active { background: var(--aqua); border-color: var(--aqua); color: var(--surface); }
+
+    .gallery-modal-body { padding: 2.5rem; max-width: 1400px; margin: 0 auto; }
+    .gallery-count { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--outline); margin-bottom: 2rem; }
+
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+
+    .gallery-item {
+      position: relative; aspect-ratio: 3/4; overflow: hidden;
+      cursor: pointer; background: var(--surface-mid);
+      border: 1px solid var(--white5); transition: transform 0.3s;
+    }
+    .gallery-item:hover { transform: translateY(-4px); }
+    .gallery-item.hidden { display: none; }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      filter: grayscale(80%); transition: filter 0.5s, transform 0.5s;
+    }
+    .gallery-item:hover img { filter: grayscale(0%); transform: scale(1.06); }
+    .gallery-item-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, transparent 100%);
+      padding: 2rem 1rem 1rem;
+      transform: translateY(100%); transition: transform 0.35s ease;
+    }
+    .gallery-item:hover .gallery-item-info { transform: translateY(0); }
+    .gallery-item-name { font-family: var(--serif); font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem; }
+    .gallery-item-price { font-size: 0.85rem; font-weight: 700; color: var(--aqua); }
+
+    /* ===================== LIGHTBOX ===================== */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 600;
+      background: rgba(0,0,0,0.92); backdrop-filter: blur(24px);
+      animation: galFadeIn 0.25s ease;
+    }
+    .lightbox.open { display: flex; align-items: center; justify-content: center; padding: 2rem; }
+    .lightbox-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      max-width: 960px; width: 100%;
+      background: var(--surface-high); border: 1px solid var(--white10);
+      max-height: 90vh; overflow: hidden; position: relative;
+    }
+    .lightbox-img { overflow: hidden; }
+    .lightbox-img img { width: 100%; height: 100%; object-fit: cover; min-height: 420px; }
+    .lightbox-body {
+      padding: 3rem 2.5rem; display: flex; flex-direction: column;
+      justify-content: center; gap: 1.5rem; overflow-y: auto;
+    }
+    .lightbox-cat { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--aqua); }
+    .lightbox-name { font-family: var(--serif); font-size: 2rem; color: #fff; line-height: 1.15; }
+    .lightbox-price { font-size: 1.6rem; font-weight: 700; color: var(--aqua); }
+    .lightbox-desc { color: var(--outline); line-height: 1.75; font-size: 0.95rem; }
+    .lightbox-close {
+      position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--white10); color: var(--on-surface);
+      font-size: 1rem; transition: all 0.25s; z-index: 10; background: var(--surface-high);
+    }
+    .lightbox-close:hover { border-color: var(--aqua); color: var(--aqua); }
+    .lightbox-nav { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+    .lightbox-nav-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border: 1px solid var(--white10);
+      color: var(--on-surface); transition: all 0.25s; font-size: 1rem;
+    }
+    .lightbox-nav-btn:hover { border-color: var(--aqua); color: var(--aqua); }
+
+    @media (max-width: 900px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-modal-header { padding: 1rem 1.25rem; }
+      .gallery-modal-body { padding: 1.5rem 1.25rem; }
+      .lightbox-inner { grid-template-columns: 1fr; max-height: 88vh; overflow-y: auto; }
+      .lightbox-img img { min-height: 260px; max-height: 300px; }
+      .lightbox-body { padding: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+      .lightbox { padding: 0; align-items: flex-end; }
+      .lightbox-inner { border-radius: 0; max-height: 95vh; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span class="nav-logo-text">BY PRATA</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#colecoes">Coleções</a>
+      <a href="#historia">Nossa História</a>
+      <a href="#contato">Contato</a>
+    </div>
+
+    <a href="#" class="nav-cta" id="nav-wa-btn" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Falar com Vendedora
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#colecoes" onclick="closeMobileMenu()">Coleções</a>
+    <a href="#historia" onclick="closeMobileMenu()">Nossa História</a>
+    <a href="#contato" onclick="closeMobileMenu()">Contato</a>
+    <a href="#" class="mobile-cta" id="mobile-wa-btn" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Falar com Vendedora
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs5Stj0nnvb1kBg3gipuTsY4GXdbvhUVek6ZzX3hbltNb-gkLv4ZNEtTgzNFzgZNB8Q4tJGi5L0uwltXRJk-nB8_HbqoGJJh10Gk64RvXxFnNA3RXd69jKmf38QuinGnZ-C5kjeWKQFwdfpnbxYuGXyveAaiAUuwz3aNBmpDUprc8WBts2Np-3vAif_yupnffozJD-9f-wow9TxeZMH7LieNxw_17_PMnCwXgVNOcDyXL8dc2Vv4wKzY1zJYSX4X0bUY6rFLJHCGQ" alt="Joias de prata de alto padrão" referrerpolicy="no-referrer" />
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-tag">Joalheria Artesanal de Alto Padrão</p>
+      <h1 class="hero-title">A Elegância da Prata em Cada Detalhe</h1>
+      <p class="hero-sub">Do puro metal nasce uma joia extraordinária — forjada para atravessar o tempo.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary" id="hero-wa-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Comprar Agora
+        </a>
+        <button class="btn-outline" id="open-gallery-btn">Ver Coleções</button>
+      </div>
+    </div>
+
+    <div class="hero-badge">
+      <div class="hero-badge-num">01</div>
+      <div class="hero-badge-label">Edição Brilho das Pedras</div>
+    </div>
+  </section>
+
+  <!-- COLEÇÕES -->
+  <section class="section products-bg" id="colecoes">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-header fade-in">
+        <div>
+          <p class="section-label">Curadoria Royale</p>
+          <h2 class="section-title">Nossas Joias</h2>
+          <p class="section-desc">Cada peça é selecionada à mão e verificada por sua clareza excepcional e pureza metálica.</p>
+        </div>
+        <a href="#contato" style="font-family:var(--serif);font-style:italic;color:var(--aqua);border-bottom:1px solid rgba(90,220,179,0.3);padding-bottom:2px;transition:border-color 0.3s;white-space:nowrap" onmouseover="this.style.borderColor='var(--aqua)'" onmouseout="this.style.borderColor='rgba(90,220,179,0.3)'">
+          Solicitar pelo WhatsApp →
+        </a>
+      </div>
+
+      <div class="product-grid">
+
+        <div class="product-card fade-in">
+          <div class="product-card-img">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800" alt="Anel Solitário Aurora" loading="lazy" />
+            <div class="product-card-overlay">
+              <button class="product-card-btn wa-product-btn" data-product="Anel Solitário Aurora - R$ 3.200">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Tenho Interesse
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Anel Solitário Aurora</div>
+              <div class="product-cat">Anel · Prata 950</div>
+            </div>
+            <div class="product-price">R$ 3.200</div>
+          </div>
+        </div>
+
+        <div class="product-card fade-in">
+          <div class="product-card-img">
+            <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=800" alt="Anel Entrelaçado Luna" loading="lazy" />
+            <div class="product-card-overlay">
+              <button class="product-card-btn wa-product-btn" data-product="Anel Entrelaçado Luna - R$ 1.850">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Tenho Interesse
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Anel Entrelaçado Luna</div>
+              <div class="product-cat">Anel · Design Contemporâneo</div>
+            </div>
+            <div class="product-price">R$ 1.850</div>
+          </div>
+        </div>
+
+        <div class="product-card fade-in">
+          <div class="product-card-img">
+            <img src="https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&q=80&w=800" alt="Meia Aliança Eternal" loading="lazy" />
+            <div class="product-card-overlay">
+              <button class="product-card-btn wa-product-btn" data-product="Meia Aliança Eternal - R$ 2.100">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Tenho Interesse
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Meia Aliança Eternal</div>
+              <div class="product-cat">Meia-Aliança · Cravação em Trilho</div>
+            </div>
+            <div class="product-price">R$ 2.100</div>
+          </div>
+        </div>
+
+        <div class="product-card fade-in">
+          <div class="product-card-img">
+            <img src="https://images.unsplash.com/photo-1603561591411-071c4f713932?auto=format&fit=crop&q=80&w=800" alt="Meia Aliança Brilho Celeste" loading="lazy" />
+            <div class="product-card-overlay">
+              <button class="product-card-btn wa-product-btn" data-product="Meia Aliança Brilho Celeste - R$ 2.450">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Tenho Interesse
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Meia Aliança Brilho Celeste</div>
+              <div class="product-cat">Meia-Aliança · Elegância Clássica</div>
+            </div>
+            <div class="product-price">R$ 2.450</div>
+          </div>
+        </div>
+
+        <div class="product-card fade-in">
+          <div class="product-card-img">
+            <img src="https://images.unsplash.com/photo-1589128777073-263566ae5e4d?auto=format&fit=crop&q=80&w=800" alt="Aliança de Namoro Infinito" loading="lazy" />
+            <div class="product-card-overlay">
+              <button class="product-card-btn wa-product-btn" data-product="Aliança de Namoro Infinito - R$ 1.200">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Tenho Interesse
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Aliança de Namoro Infinito</div>
+              <div class="product-cat">Aliança · Compromisso e Amor</div>
+            </div>
+            <div class="product-price">R$ 1.200</div>
+          </div>
+        </div>
+
+        <div class="product-card fade-in">
+          <div class="product-card-img">
+            <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80&w=800" alt="Aliança de Namoro Minimalista" loading="lazy" />
+            <div class="product-card-overlay">
+              <button class="product-card-btn wa-product-btn" data-product="Aliança de Namoro Minimalista - R$ 950">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Tenho Interesse
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <div>
+              <div class="product-name">Aliança de Namoro Minimalista</div>
+              <div class="product-cat">Aliança · Prata Polida</div>
+            </div>
+            <div class="product-price">R$ 950</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTO -->
+  <div class="testimonial-section fade-in">
+    <p class="testimonial-quote">"O peso da prata não é apenas matéria — é legado sobre a pele. Pura, fria e eterna. Uma joia que atravessa gerações."</p>
+  </div>
+
+  <!-- BRAND STORY -->
+  <section class="section brand-story" id="historia">
+    <div class="brand-story-inner">
+      <div class="brand-img-wrap fade-in">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0_K0yyJRYAOFusVLC0-ohrYda-WOxqPGThnoNqAZr5fqgZ-zt3nlvpIqbGipwq0gXVH3VnI1KP6WJe97GIFqAxSl3c3tdFS6oY5OJrMLhpRcWsuwE3PTnoqfR8ilsgEe8OF8B88tAiyw0l16j5w2I6kWaaDBKj_Ro2ve-GKi5hnA4Kwvp78fndYWqftAbCoO8jvRJ5PdtME316IqM6ERa8T0rn9eEEfxw7GlyLEzEZ-ABe47d_pnDAprHC9qus0p9AXD1UAuKiFI" alt="Joalheiro artesanal trabalhando" referrerpolicy="no-referrer" />
+        <div class="brand-badge">
+          <span>Desde 2013</span>
+        </div>
+      </div>
+      <div class="brand-text fade-in">
+        <p class="section-label">Nossa Herança</p>
+        <h2>A Arte de Viver a Luz</h2>
+        <p>
+          A By Prata nasceu de uma obsessão pela forma como a luz revela a verdadeira essência da prata de lei polida. O que começou como um pequeno ateliê em Joinville hoje se firma como uma marca de beleza discreta, construída com precisão, identidade e propósito.
+        </p>
+        <p>
+          Não vendemos apenas joias; fazemos parte de histórias. Cada peça é forjada com técnicas tradicionais e modernas, pensada para atravessar o tempo — porque o brilho de hoje deve se tornar a herança de amanhã.
+        </p>
+        <a href="#" class="brand-link" id="story-wa-btn" target="_blank" rel="noopener noreferrer">
+          Conheça nossas peças
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section" id="contato">
+    <div class="cta-inner fade-in">
+      <p class="section-label">Atendimento Personalizado</p>
+      <div id="vendedora-tag" class="vendedora-tag" style="display:none"></div>
+      <h2>Pronta para encontrar sua joia perfeita?</h2>
+      <p>Fale diretamente com nossa especialista. Tire dúvidas, conheça tamanhos, materiais e condições especiais — tudo no WhatsApp, com a atenção que você merece.</p>
+      <a href="#" class="btn-primary" id="cta-wa-btn" target="_blank" rel="noopener noreferrer" style="display:inline-flex;margin:0 auto">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:22px;height:22px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span id="cta-wa-label">Falar no WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="color:var(--aqua)"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <span class="footer-logo-text">BY PRATA</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Envios e Devoluções</a>
+      <a href="#">Guia de Cuidados</a>
+      <a href="#contato">Contato</a>
+    </div>
+    <p class="footer-copy">© 2025 By Prata. Todos os direitos reservados.</p>
+  </footer>
+
+
+  <!-- ===================== GALLERY MODAL ===================== -->
+  <div class="gallery-modal" id="gallery-modal" role="dialog" aria-modal="true" aria-label="Galeria de Joias">
+    <div class="gallery-modal-header">
+      <h2 class="gallery-modal-title">Curadoria Royale</h2>
+      <div class="gallery-filters" id="gallery-filters">
+        <button class="gallery-filter-btn active" data-filter="all">Todas</button>
+        <button class="gallery-filter-btn" data-filter="Anel">Anel</button>
+        <button class="gallery-filter-btn" data-filter="Anel meia-aliança">Meia-Aliança</button>
+        <button class="gallery-filter-btn" data-filter="Aliança de Namoro">Aliança de Namoro</button>
+      </div>
+      <button class="gallery-modal-close" id="gallery-modal-close" aria-label="Fechar">&#x2715;</button>
+    </div>
+    <div class="gallery-modal-body">
+      <p class="gallery-count" id="gallery-count">6 Peças</p>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- items rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">&#x2715;</button>
+      <div class="lightbox-img">
+        <img src="" alt="" id="lightbox-img" />
+      </div>
+      <div class="lightbox-body">
+        <p class="lightbox-cat" id="lightbox-cat"></p>
+        <h2 class="lightbox-name" id="lightbox-name"></h2>
+        <p class="lightbox-price" id="lightbox-price"></p>
+        <p class="lightbox-desc" id="lightbox-desc"></p>
+        <a href="#" class="btn-primary" id="lightbox-wa-btn" style="width:fit-content">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Tenho Interesse
+        </a>
+        <div class="lightbox-nav">
+          <button class="lightbox-nav-btn" id="lightbox-prev" aria-label="Anterior">&#8592;</button>
+          <button class="lightbox-nav-btn" id="lightbox-next" aria-label="Próxima">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-container">
+    <a href="https://instagram.com/byprata" target="_blank" rel="noopener noreferrer" class="ig-float" aria-label="Instagram By Prata">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+    <a href="#" class="wa-float" id="float-wa-btn" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span>Falar com Vendedora</span>
+    </a>
+  </div>
+
+  <script>
+    // =====================================================================
+    // CONFIGURAÇÃO PADRÃO
+    // =====================================================================
+    const DEFAULT_WHATS  = '5547988342828';
+    const DEFAULT_NOME   = null; // null = sem tag de vendedora na página principal
+
+    // =====================================================================
+    // LEITURA DE PARÂMETROS DE URL
+    // ?v=NomeVendedora&w=5547999991234
+    // =====================================================================
+    const params     = new URLSearchParams(window.location.search);
+    const nomeParam  = params.get('v');
+    const whatsParam = params.get('w');
+
+    const NOME_VENDEDORA = nomeParam  || DEFAULT_NOME;
+    const WHATS_NUM      = whatsParam ? whatsParam.replace(/\D/g, '') : DEFAULT_WHATS;
+
+    // =====================================================================
+    // MENSAGENS DO WHATSAPP
+    // =====================================================================
+    function buildWaUrl(msg) {
+      return `https://wa.me/${WHATS_NUM}?text=${encodeURIComponent(msg)}`;
+    }
+
+    function msgDefault() {
+      const intro = NOME_VENDEDORA
+        ? `Olá, ${NOME_VENDEDORA}! Vi a página da By Prata e gostaria de saber mais sobre as joias. 😊`
+        : `Olá! Vi a página da By Prata e gostaria de saber mais sobre as joias. 😊`;
+      return intro;
+    }
+
+    function msgProduct(produto) {
+      const intro = NOME_VENDEDORA
+        ? `Olá, ${NOME_VENDEDORA}! Vi o *${produto}* na página da By Prata e tenho interesse. Pode me contar mais? 😊`
+        : `Olá! Vi o *${produto}* na página da By Prata e tenho interesse. Pode me contar mais? 😊`;
+      return intro;
+    }
+
+    // =====================================================================
+    // APLICAR URLs
+    // =====================================================================
+    function setWaLink(el, msg) {
+      if (!el) return;
+      el.href = buildWaUrl(msg);
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+    }
+
+    setWaLink(document.getElementById('nav-wa-btn'),   msgDefault());
+    setWaLink(document.getElementById('mobile-wa-btn'),msgDefault());
+    setWaLink(document.getElementById('hero-wa-btn'),  msgDefault());
+    setWaLink(document.getElementById('story-wa-btn'), msgDefault());
+    setWaLink(document.getElementById('cta-wa-btn'),   msgDefault());
+    setWaLink(document.getElementById('float-wa-btn'), msgDefault());
+
+    // Botões individuais de produto
+    document.querySelectorAll('.wa-product-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const produto = btn.dataset.product;
+        window.open(buildWaUrl(msgProduct(produto)), '_blank');
+      });
+    });
+
+    // =====================================================================
+    // TAG DE VENDEDORA
+    // =====================================================================
+    if (NOME_VENDEDORA) {
+      const tag = document.getElementById('vendedora-tag');
+      tag.textContent = `Atendimento com ${NOME_VENDEDORA}`;
+      tag.style.display = 'inline-block';
+
+      const ctaLabel = document.getElementById('cta-wa-label');
+      if (ctaLabel) ctaLabel.textContent = `Falar com ${NOME_VENDEDORA}`;
+
+      const floatSpan = document.querySelector('.wa-float span');
+      if (floatSpan) floatSpan.textContent = `Falar com ${NOME_VENDEDORA}`;
+    }
+
+    // =====================================================================
+    // MOBILE MENU
+    // =====================================================================
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Fecha menu ao clicar fora
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    // =====================================================================
+    // SCROLL ANIMATIONS (IntersectionObserver)
+    // =====================================================================
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  
+    // =====================================================================
+    // GALLERY MODAL + LIGHTBOX
+    // =====================================================================
+    const PRODUCTS_DATA = [
+      { id:'ring-1',       name:'Anel Solitário Aurora',          price:3200,  category:'Anel',             image:'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800', description:'Prata 950 com zircônia premium lapidação brilhante.' },
+      { id:'ring-2',       name:'Anel Entrelaçado Luna',          price:1850,  category:'Anel',             image:'https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&q=80&w=800', description:'Design contemporâneo inspirado nas fases da lua.' },
+      { id:'half-1',       name:'Meia Aliança Eternal',           price:2100,  category:'Anel meia-aliança',image:'https://images.unsplash.com/photo-1598560917505-59a3ad559071?auto=format&fit=crop&q=80&w=800', description:'Cravação em trilho com pedras selecionadas.' },
+      { id:'half-2',       name:'Meia Aliança Brilho Celeste',    price:2450,  category:'Anel meia-aliança',image:'https://images.unsplash.com/photo-1603561591411-071c4f713932?auto=format&fit=crop&q=80&w=800', description:'Elegância clássica para momentos inesquecíveis.' },
+      { id:'engagement-1', name:'Aliança de Namoro Infinito',     price:1200,  category:'Aliança de Namoro',image:'https://images.unsplash.com/photo-1589128777073-263566ae5e4d?auto=format&fit=crop&q=80&w=800', description:'Símbolo de compromisso e amor eterno.' },
+      { id:'engagement-2', name:'Aliança de Namoro Minimalista',  price:950,   category:'Aliança de Namoro',image:'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80&w=800', description:'Beleza na simplicidade da prata polida.' }
+    ];
+
+    const fmtBRL = v => new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(v);
+
+    let currentFilter = 'all';
+    let currentIndex  = 0;
+    let visibleProducts = [...PRODUCTS_DATA];
+
+    function filteredList() {
+      return currentFilter === 'all' ? PRODUCTS_DATA : PRODUCTS_DATA.filter(p => p.category === currentFilter);
+    }
+
+    function renderGallery() {
+      const grid  = document.getElementById('gallery-grid');
+      const count = document.getElementById('gallery-count');
+      const list  = filteredList();
+      visibleProducts = list;
+      count.textContent = list.length + ' Peça' + (list.length !== 1 ? 's' : '');
+      grid.innerHTML = list.map((p, i) => `
+        <div class="gallery-item" data-index="${i}" tabindex="0" role="button" aria-label="Ver ${p.name}">
+          <img src="${p.image}" alt="${p.name}" loading="lazy" />
+          <div class="gallery-item-info">
+            <div class="gallery-item-name">${p.name}</div>
+            <div class="gallery-item-price">${fmtBRL(p.price)}</div>
+          </div>
+        </div>
+      `).join('');
+
+      grid.querySelectorAll('.gallery-item').forEach(el => {
+        el.addEventListener('click', () => openLightbox(parseInt(el.dataset.index)));
+        el.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') openLightbox(parseInt(el.dataset.index)); });
+      });
+    }
+
+    // Gallery open / close
+    const galleryModal = document.getElementById('gallery-modal');
+
+    document.getElementById('open-gallery-btn').addEventListener('click', () => {
+      galleryModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      renderGallery();
+    });
+
+    document.getElementById('gallery-modal-close').addEventListener('click', closeGallery);
+
+    galleryModal.addEventListener('click', e => { if(e.target === galleryModal) closeGallery(); });
+
+    function closeGallery() {
+      galleryModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Filters
+    document.getElementById('gallery-filters').addEventListener('click', e => {
+      const btn = e.target.closest('.gallery-filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.gallery-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderGallery();
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+
+    function openLightbox(index) {
+      currentIndex = index;
+      populateLightbox(visibleProducts[index]);
+      lightbox.classList.add('open');
+    }
+
+    function populateLightbox(p) {
+      document.getElementById('lightbox-img').src    = p.image;
+      document.getElementById('lightbox-img').alt    = p.name;
+      document.getElementById('lightbox-cat').textContent   = p.category;
+      document.getElementById('lightbox-name').textContent  = p.name;
+      document.getElementById('lightbox-price').textContent = fmtBRL(p.price);
+      document.getElementById('lightbox-desc').textContent  = p.description;
+      document.getElementById('lightbox-wa-btn').href = buildWaUrl(msgProduct(p.name + ' - ' + fmtBRL(p.price)));
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', () => {
+      lightbox.classList.remove('open');
+    });
+
+    lightbox.addEventListener('click', e => { if(e.target === lightbox) lightbox.classList.remove('open'); });
+
+    document.getElementById('lightbox-prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + visibleProducts.length) % visibleProducts.length;
+      populateLightbox(visibleProducts[currentIndex]);
+    });
+
+    document.getElementById('lightbox-next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % visibleProducts.length;
+      populateLightbox(visibleProducts[currentIndex]);
+    });
+
+    // Keyboard nav
+    document.addEventListener('keydown', e => {
+      if (lightbox.classList.contains('open')) {
+        if (e.key === 'ArrowLeft')  { currentIndex = (currentIndex - 1 + visibleProducts.length) % visibleProducts.length; populateLightbox(visibleProducts[currentIndex]); }
+        if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % visibleProducts.length; populateLightbox(visibleProducts[currentIndex]); }
+        if (e.key === 'Escape') lightbox.classList.remove('open');
+      } else if (galleryModal.classList.contains('open')) {
+        if (e.key === 'Escape') closeGallery();
+      }
+    });
+
+  </script>
+</body>
+</html>
