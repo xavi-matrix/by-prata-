@@ -31,6 +31,16 @@ export function criarAuthAdmin(config=supabaseConfig, fetcher=fetch) {
    if(!token) throw new Error('É necessário entrar como administrador.');
    return request('/rest/v1/produtos?select=id,sku,nome,ativo&order=criado_em.desc&limit=100',{headers:{Authorization:'Bearer '+token}});
   },
+  async cadastrarProduto({sku,nome,descricao}) {
+   if(!token) throw new Error('É necessário entrar como administrador.');
+   const codigo=String(sku??'').trim().toUpperCase();
+   const titulo=String(nome??'').trim();
+   if(!/^[A-Z0-9-]{2,32}$/.test(codigo)) throw new Error('SKU inválido.');
+   if(titulo.length<2||titulo.length>100) throw new Error('Nome inválido.');
+   const resultado=await request('/rest/v1/produtos',{method:'POST',headers:{Authorization:'Bearer '+token,Prefer:'return=representation'},body:JSON.stringify({sku:codigo,nome:titulo,descricao:String(descricao??'').trim(),ativo:false})});
+   if(!Array.isArray(resultado)||resultado.length!==1) throw new Error('Cadastro não confirmado.');
+   return resultado[0];
+  },
   async sair() {
    const anterior=token;token=null;
    if(anterior) await fetcher(base+'/auth/v1/logout',{method:'POST',headers:{...headers,Authorization:'Bearer '+anterior}}).catch(()=>{});
