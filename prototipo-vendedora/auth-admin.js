@@ -41,6 +41,22 @@ export function criarAuthAdmin(config=supabaseConfig, fetcher=fetch) {
    if(!Array.isArray(resultado)||resultado.length!==1) throw new Error('Cadastro não confirmado.');
    return resultado[0];
   },
+  async cadastrarConsultora({nome,slug,whatsapp}) {
+   if(!token) throw new Error('É necessário entrar como administrador.');
+   const titulo=String(nome??'').trim();
+   const identificador=String(slug??'').trim().toLowerCase();
+   const telefone=String(whatsapp??'').replace(/\D/g,'');
+   if(titulo.length<2||titulo.length>100) throw new Error('Nome inválido.');
+   if(!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(identificador)) throw new Error('Identificador inválido.');
+   if(telefone && !/^55[1-9][0-9]{9,10}$/.test(telefone)) throw new Error('WhatsApp deve conter 55, DDD e número.');
+   const result=await request('/rest/v1/consultoras',{method:'POST',headers:{Authorization:'Bearer '+token,Prefer:'return=representation'},body:JSON.stringify({nome:titulo,slug:identificador,whatsapp:telefone||null,ativa:false})});
+   if(!Array.isArray(result)||result.length!==1) throw new Error('Cadastro não confirmado.');
+   return result[0];
+  },
+  async listarConsultoras() {
+   if(!token) throw new Error('É necessário entrar como administrador.');
+   return request('/rest/v1/consultoras?select=id,nome,slug,whatsapp,ativa&order=criada_em.desc&limit=100',{headers:{Authorization:'Bearer '+token}});
+  },
   async sair() {
    const anterior=token;token=null;
    if(anterior) await fetcher(base+'/auth/v1/logout',{method:'POST',headers:{...headers,Authorization:'Bearer '+anterior}}).catch(()=>{});
