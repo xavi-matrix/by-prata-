@@ -13,6 +13,16 @@ Status: decisões aprovadas em 12/10/2026. Documento de referência para desenvo
 - Promoções e alterações de preço apenas por autorização da administração.
 - O servidor deve recalcular preços e totais dos pedidos; nunca confiar nos valores enviados pelo navegador.
 
+## Desconto para mostruário das consultoras (aprovado em 13/10/2026)
+- Benefício permanente por modelo novo lançado, destinado à formação do mostruário físico da consultora.
+- Primeira unidade do modelo para cada consultora: 25% de desconto sobre o preço oficial.
+- Segunda unidade do mesmo modelo para a mesma consultora: 15% de desconto.
+- A partir da terceira unidade do mesmo modelo: preço oficial, sem desconto especial.
+- As compras próprias de demonstração não geram comissão nem contam para metas ou prêmios.
+- O preço de venda ao consumidor final permanece único e definido pela By Prata.
+- Registrar a quantidade adquirida por consultora e por modelo, impedindo reutilização do benefício; validar elegibilidade e preço no servidor.
+- Implementação e condições operacionais de venda de kits ainda pendentes; não aplicar automaticamente antes de testes.
+
 ## Parcelamento
 Faixas de valor do pedido em produtos e quantidade máxima **sem juros**:
 - Até R$ 79,99: 1 parcela.
