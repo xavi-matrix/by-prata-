@@ -59,6 +59,15 @@ Exemplo: R$ 3.000 em vendas elegíveis => R$ 600 em comissão + R$ 150 em prêmi
 - Não prometer entrega garantida nem cobrar taxa sem informar o valor antes da conclusão do pedido.
 - Implementação do checkout e agendamento pendente; não alterar o site oficial sem autorização.
 
+### Tentativa de entrega sem recebimento (definido em 13/10/2026)
+- Se a cliente não receber o pedido na tentativa de entrega por motoboy, a mercadoria será deixada com a consultora responsável pela venda para posterior contato e entrega.
+- A consultora deverá contatar a cliente e combinar uma nova entrega.
+- Registrar no pedido a tentativa frustrada, data/hora, consultora que recebeu a mercadoria, transferência de custódia e confirmação da entrega final.
+- Status operacional sugerido: `aguardando_reagendamento`; não marcar como entregue até a confirmação efetiva da cliente.
+- A transferência à consultora deve ter registro de recebimento e preservar a embalagem/integridade da peça.
+- Se não houver consultora vinculada ao pedido ou se ela não puder receber, o procedimento alternativo dependerá de definição da By Prata.
+- Eventuais custos de nova tentativa e condições de reagendamento ainda não foram definidos; informar previamente à cliente quando aplicáveis.
+
 ## Segurança e implantação
 - Apenas administração pode alterar preços, faixas de parcelamento, taxas e prêmios.
 - Pedidos precisam de associação de consultora validada, pagamentos confirmados por webhook verificado, operações idempotentes e regras de acesso (RLS).
