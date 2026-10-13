@@ -49,6 +49,16 @@ Até 6 parcelas no total. Parcelas que ultrapassem o limite sem juros da faixa t
 
 Exemplo: R$ 3.000 em vendas elegíveis => R$ 600 em comissão + R$ 150 em prêmio = R$ 750, antes de eventuais ajustes de elegibilidade.
 
+## Entrega local por motoboy (definido em 13/10/2026)
+- Os pedidos realizados na landing page terão opção de entrega por motoboy, conforme área de atendimento.
+- No checkout, o comprador informará endereço de entrega, dia preferido e período do dia preferido (manhã, tarde ou noite).
+- Permitir observações opcionais sobre recebimento.
+- Data e período são preferências do comprador; a confirmação dependerá da disponibilidade da By Prata e do motoboy.
+- A administração deverá receber esses dados associados ao pedido para organizar e confirmar a entrega.
+- Área atendida, taxa de entrega, dias e períodos disponíveis, prazos mínimos e política de reagendamento ainda precisam ser definidos.
+- Não prometer entrega garantida nem cobrar taxa sem informar o valor antes da conclusão do pedido.
+- Implementação do checkout e agendamento pendente; não alterar o site oficial sem autorização.
+
 ## Segurança e implantação
 - Apenas administração pode alterar preços, faixas de parcelamento, taxas e prêmios.
 - Pedidos precisam de associação de consultora validada, pagamentos confirmados por webhook verificado, operações idempotentes e regras de acesso (RLS).
