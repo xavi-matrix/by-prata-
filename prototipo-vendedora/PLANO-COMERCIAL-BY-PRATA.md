@@ -80,3 +80,11 @@ Exemplo: R$ 3.000 em vendas elegíveis => R$ 600 em comissão + R$ 150 em prêmi
 - Banco: Supabase, projeto de desenvolvimento.
 - Testes web: Netlify, site de homologação separado.
 - Site oficial `https://byprata.com.br/` deve permanecer preservado.
+
+## Canal exclusivo para compras das consultoras (definido em 13/10/2026)
+- Compras próprias de peças por consultoras não poderão ser realizadas na landing page destinada a clientes finais.
+- Essas compras deverão ocorrer em fluxo interno/exclusivo para consultoras, com identificação da consultora e aplicação dos descontos específicos já aprovados.
+- As peças compradas pela consultora serão entregues diretamente a ela, não ao cliente final.
+- Essas compras não geram comissão nem pontuação para premiações de vendas.
+- Pedidos da landing page permanecem exclusivamente para clientes finais e seguem seu próprio fluxo de entrega.
+- O canal interno de compra de consultoras ainda precisa ser implementado; não alterar o site oficial sem autorização.
