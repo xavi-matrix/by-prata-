@@ -16,8 +16,9 @@ Status: decisões aprovadas em 12/10/2026. Documento de referência para desenvo
 ## Desconto para mostruário das consultoras (revisado em 13/10/2026)
 - Benefício permanente por modelo novo lançado, destinado à formação do mostruário físico da consultora.
 - Primeira unidade do modelo para cada consultora: 25% de desconto sobre o preço oficial.
-- Segunda unidade e seguintes do mesmo modelo para a mesma consultora: preço oficial, sem desconto especial.
-- A regra anterior de 15% na segunda unidade foi revogada para desestimular compra para revenda fora do sistema.
+- Segunda unidade do mesmo modelo para a mesma consultora: 15% de desconto sobre o preço oficial.
+- A partir da terceira unidade do mesmo modelo: preço oficial, sem desconto especial.
+- A By Prata admite a possibilidade de revenda direta pela consultora, desde que sejam definidos procedimentos fiscais, de garantia, trocas e atendimento. A comparação econômica entre desconto e comissão considera custos adicionais de cada canal.
 - As compras próprias de demonstração não geram comissão nem contam para metas ou prêmios.
 - O preço de venda ao consumidor final permanece único e definido pela By Prata.
 - Registrar a quantidade adquirida por consultora e por modelo, impedindo reutilização do benefício; validar elegibilidade e preço no servidor.
