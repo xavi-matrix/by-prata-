@@ -88,3 +88,13 @@ Exemplo: R$ 3.000 em vendas elegíveis => R$ 600 em comissão + R$ 150 em prêmi
 - Essas compras não geram comissão nem pontuação para premiações de vendas.
 - Pedidos da landing page permanecem exclusivamente para clientes finais e seguem seu próprio fluxo de entrega.
 - O canal interno de compra de consultoras ainda precisa ser implementado; não alterar o site oficial sem autorização.
+
+## QR Code de recebimento disponibilizado ao cliente na landing page (definido em 15/10/2026)
+- Após conclusão da compra e confirmação do pagamento, a landing page disponibilizará à cliente um QR Code exclusivo do pedido, com opção de salvar e recuperar pelo link seguro do pedido.
+- O QR Code fica sob controle da cliente; no momento da entrega, ela o apresenta ao motoboy.
+- O motoboy autenticado no sistema By Prata escaneia o código e valida a correspondência com o pedido atribuído a ele.
+- O QR Code deve usar token aleatório, não expor dados pessoais, ser validado no servidor e invalidado após confirmação efetiva da entrega.
+- Apenas escanear não deve concluir automaticamente o pedido: registrar identificação do entregador, data/hora e confirmação explícita de entrega; avaliar confirmação adicional da cliente para reduzir fraude.
+- Na ausência da cliente ou do código, não marcar automaticamente como entregue. Aplicar procedimento de tentativa frustrada, com transferência registrada à consultora responsável quando aplicável.
+- Definir posteriormente alternativa acessível para clientes sem celular ou sem acesso ao QR Code, além de tratamento de perda, compartilhamento e revogação do token.
+- Fluxo ainda não implementado; não alterar o site oficial sem autorização.
