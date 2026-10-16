@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>By Prata | Cadastro protegido</title>
+<style>body{margin:0;background:#151a18;color:#f0f5f1;font:16px Arial,sans-serif}main{max-width:650px;margin:6vh auto;padding:25px}section{background:#24302a;padding:24px;border-radius:16px;margin:16px 0}label{display:grid;gap:7px;margin:14px 0}input,textarea,button{font:inherit;padding:12px;border-radius:8px;border:1px solid #789181}input,textarea{background:#111a15;color:white}button{background:#74d7ae;color:#13251c;font-weight:bold;cursor:pointer}button:disabled{opacity:.5}a{color:#80e3bb}small,p{color:#c3cec7}</style></head><body><main><small>BY PRATA • DESENVOLVIMENTO</small><h1>Cadastro protegido de modelos</h1><p>Somente o administrador autorizado pode gravar modelos no banco. Todo modelo é criado inativo e não aparece no site oficial.</p>
+<section id="acesso"><h2>Entrar</h2><form id="login"><label>E-mail<input id="email" type="email" autocomplete="username" required></label><label>Senha<input id="senha" type="password" autocomplete="current-password" required></label><button id="entrar">Acessar cadastro</button></form></section>
+<section id="cadastro" hidden><h2>Novo modelo</h2><form id="produto"><label>Nome<input id="nome" maxlength="100" required placeholder="Ex.: Anel Ondas"></label><label>SKU<input id="sku" maxlength="32" required placeholder="Ex.: BP-001"></label><label>Descrição<textarea id="descricao" maxlength="1500" rows="3"></textarea></label><button id="salvar">Salvar modelo inativo</button></form><p><button id="sair" type="button">Sair</button></p></section>
+<p id="status" role="status" aria-live="polite"></p><p><a href="./cadastro.html">Rascunhos locais (demonstração)</a></p></main>
+<script type="module">
+import {criarAuthAdmin} from './auth-admin.js';
+const el=id=>document.getElementById(id);
+let auth;
+try{auth=criarAuthAdmin()}catch{el('entrar').disabled=true;el('status').textContent='Configuração do banco indisponível.'}
+el('login').addEventListener('submit',async e=>{
+ e.preventDefault();el('entrar').disabled=true;el('status').textContent='Verificando permissão...';
+ try{await auth.entrar(el('email').value.trim(),el('senha').value);el('acesso').hidden=true;el('cadastro').hidden=false;el('status').textContent='Administrador autorizado.'}
+ catch(err){el('status').textContent=err.message}
+ finally{el('senha').value='';el('entrar').disabled=false}
+});
+el('produto').addEventListener('submit',async e=>{
+ e.preventDefault();el('salvar').disabled=true;el('status').textContent='Salvando...';
+ try{const p=await auth.cadastrarProduto({nome:el('nome').value,sku:el('sku').value,descricao:el('descricao').value});el('status').textContent='Modelo '+p.sku+' salvo como inativo.';el('produto').reset()}
+ catch(err){el('status').textContent=err.message}
+ finally{el('salvar').disabled=false}
+});
+el('sair').addEventListener('click',async()=>{await auth.sair();el('cadastro').hidden=true;el('acesso').hidden=false;el('status').textContent='Sessão encerrada.'});
+</script></body></html>
