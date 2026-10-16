@@ -98,3 +98,13 @@ Exemplo: R$ 3.000 em vendas elegíveis => R$ 600 em comissão + R$ 150 em prêmi
 - Na ausência da cliente ou do código, não marcar automaticamente como entregue. Aplicar procedimento de tentativa frustrada, com transferência registrada à consultora responsável quando aplicável.
 - Definir posteriormente alternativa acessível para clientes sem celular ou sem acesso ao QR Code, além de tratamento de perda, compartilhamento e revogação do token.
 - Fluxo ainda não implementado; não alterar o site oficial sem autorização.
+
+## Recuperação e alternativa ao QR Code de entrega (definido em 15/10/2026)
+- A cliente terá duas credenciais equivalentes para confirmar recebimento: QR Code exclusivo e código numérico de uso único (preferência sobre palavra por facilitar leitura e digitação).
+- As credenciais são disponibilizadas após confirmação do pagamento, vinculadas ao mesmo pedido, e invalidadas após a entrega confirmada.
+- A administração By Prata poderá localizar o pedido, consultar o estado da entrega e solicitar reenvio ou reemissão das credenciais quando a cliente perder ou apagar o código.
+- Por segurança, reemissão deverá revogar credenciais anteriores, validar a identidade ou contato cadastrado da cliente e manter trilha de auditoria (quem, quando, motivo).
+- Entregadores não poderão consultar antecipadamente QR Code ou código secreto do cliente; somente validar o código apresentado na entrega, com autenticação e pedido atribuído.
+- O painel administrativo deve permitir gestão e recuperação controlada, mas evitar exposição indiscriminada de credenciais ativas; em exceções, prever procedimento administrativo auditável.
+- Evitar armazenar código secreto em texto puro; usar validação segura no servidor, limitação de tentativas e expiração apropriada.
+- Ainda pendente de implementação e testes; preservar o site oficial.
