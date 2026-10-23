@@ -108,3 +108,32 @@ Exemplo: R$ 3.000 em vendas elegíveis => R$ 600 em comissão + R$ 150 em prêmi
 - O painel administrativo deve permitir gestão e recuperação controlada, mas evitar exposição indiscriminada de credenciais ativas; em exceções, prever procedimento administrativo auditável.
 - Evitar armazenar código secreto em texto puro; usar validação segura no servidor, limitação de tentativas e expiração apropriada.
 - Ainda pendente de implementação e testes; preservar o site oficial.
+
+## Medidor digital de aro na landing page (definido em 22/10/2026)
+
+### Objetivo
+- Permitir que a cliente descubra o tamanho aproximado do aro sem instalar um aplicativo, usando um anel que já lhe sirva no mesmo dedo.
+- O medidor digital será incorporado à landing page By Prata, em interface responsiva e alinhada à identidade visual preto, branco e verde-menta.
+- Oferecer caminhos alternativos: informar aro conhecido ou solicitar medição física com aneleira pela consultora.
+
+### Calibração obrigatória da tela
+1. Explicar que a tela pode representar dimensões diferentes conforme o dispositivo, escala, zoom e configurações.
+2. Pedir um cartão de dimensões padronizadas (formato ID-1: 85,60 × 53,98 mm), sem solicitar fotografia, número, nome ou dados do cartão. Preferir o lado menor se a largura da tela não comportar o maior.
+3. Mostrar uma faixa/retângulo ajustável na tela, com controles acessíveis de aumentar/diminuir, para a cliente fazê-lo coincidir com o tamanho físico do cartão.
+4. Calcular a razão entre dimensões de referência e medidas renderizadas na tela (pixels CSS por milímetro), considerando variações de exibição; exigir nova calibração quando ela não for confiável.
+5. Não apresentar estimativa de aro como validada se a cliente pular a calibração.
+
+### Medição do anel
+1. Orientar a usar anel que sirva confortavelmente no MESMO dedo e a posicioná-lo plano sobre a tela, sem pressionar nem arranhar.
+2. Exibir círculo ajustável para coincidir com a BORDA INTERNA do anel, não a externa.
+3. Converter o diâmetro calibrado em milímetros para circunferência e aro conforme tabela brasileira adotada e validada pela produção By Prata; apresentar também o diâmetro estimado e a margem de incerteza.
+4. Pedir que a cliente repita a medida e confirme quando o valor estiver próximo do limite entre dois aros.
+5. Para anéis de banda larga, formatos incomuns ou resultado duvidoso, recomendar medição com aneleira física e confirmação antes da fabricação.
+
+### Integração e segurança operacional
+- Mostrar o resultado na ficha do produto/checkout como **aro estimado digitalmente**, distinguindo-o de **aro confirmado presencialmente** e **aro informado pela cliente**.
+- Registrar método de medição, resultado, data e eventual confirmação da consultora, sem armazenar dados de cartão bancário.
+- Pedido sob medida com aro pendente de confirmação não deve ser liberado automaticamente para a produção.
+- Testar e calibrar com aneleiras profissionais e anéis acabados de diferentes larguras, comparando celulares e navegadores; definir tolerâncias aceitáveis antes de uso comercial.
+- O recurso é uma **especificação aprovada para desenvolvimento**, não está implementado ou validado na landing page.
+- Não publicar ou alterar o site oficial sem autorização.
