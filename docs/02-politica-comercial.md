@@ -29,3 +29,10 @@ Atualizado: 2026-11-01. Situação: decisões de planejamento, sem implementaç�
 - Dados de clientes e campanhas devem ter base legal, informação transparente, minimização, preferências de contato e descadastramento; atenção reforçada aos dados de menores.
 - Nenhum envio automatizado, CRM funcional, integração WhatsApp ou regra definitiva de atribuição de oportunidades foi implementado por esta decisão.
 - Pendência seguinte: definir preferência de canal e consentimento para contato comercial e regras de indicação/atribuição para cliente originada no site ou por consultora.
+
+### Clientes originadas diretamente no site (decisão de 2026-11-02)
+- Clientes que compram diretamente no site **sem vínculo com consultora** permanecem inicialmente sob relacionamento da própria By Prata.
+- A cliente pode **optar expressamente** por receber atendimento personalizado de uma consultora. Não realizar vinculação compulsória ou automática por região.
+- A disponibilidade dessa opção e o registro da preferência devem ser claros. Encaminhar somente os dados necessários para atendimento, conforme base legal aplicável e transparência sobre o compartilhamento.
+- A eventual comissão sobre vendas futuras, regra de atribuição da consultora escolhida e possibilidade de alterar/desvincular o atendimento ainda precisam ser especificadas. Não atribuir comissão retroativa à compra direta original por simples encaminhamento posterior.
+- Esta é uma regra de planejamento. Nenhuma integração CRM, disparo de mensagem ou alteração no site é implementada pelo registro.
