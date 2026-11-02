@@ -22,3 +22,10 @@ Atualizado: 2026-11-01. Situação: decisões de planejamento, sem implementaç�
 - R$165 é referência de simulações financeiras **e** compra mínima aprovada para frete grátis nas regiões abrangidas pela política, sujeita a condições claramente divulgadas.
 - Não prometer frete grátis e depois negá-lo inesperadamente: estruturar preços/custos/ofertas antes da publicação, preservar >=20% de margem de contribuição em pedidos beneficiados.
 - Preservar faixas de parcelamento históricas até conciliação técnica: <=79,99:1x; 80-149,99:2x; 150-249,99:3x; 250-399,99:4x; >=400:5x sem juros; máximo até 6x com juros aplicáveis além da faixa, regras operadora a validar.
+
+## Relacionamento pós-venda | CRM By Prata Momentos (aprovado em 2026-11-02)
+- Modelo **híbrido**: By Prata planeja e controla campanhas, oportunidades e critérios; a consultora vinculada faz contato comercial personalizado quando apropriado.
+- Propostas iniciais de linhas por ocasião (ainda não aprovadas como coleções/produtos): **Meus 15 Anos** e **Alianças de Namoro**; outras ocasiões futuras em estudo.
+- Dados de clientes e campanhas devem ter base legal, informação transparente, minimização, preferências de contato e descadastramento; atenção reforçada aos dados de menores.
+- Nenhum envio automatizado, CRM funcional, integração WhatsApp ou regra definitiva de atribuição de oportunidades foi implementado por esta decisão.
+- Pendência seguinte: definir preferência de canal e consentimento para contato comercial e regras de indicação/atribuição para cliente originada no site ou por consultora.
