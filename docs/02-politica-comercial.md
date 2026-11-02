@@ -51,3 +51,8 @@ Atualizado: 2026-11-01. Situação: decisões de planejamento, sem implementaç�
 - Separar **preço sugerido/corrigido automaticamente** de **preço de venda publicado**: a By Prata mantém controle exclusivo dos preços e aprovação de alterações de preço visíveis no catálogo; consultoras não os modificam. Não aplicar reajustes silenciosos ao site oficial.
 - Registrar memória de cálculo (peso, custos, premissas, preço-base, preço corrigido, margem estimada, data e versão). Custos e tributos ainda não validados devem ser sinalizados antes da aprovação.
 - Esta decisão autoriza a regra de **cálculo automático no planejamento**, não configura implementação ou publicação automática no Supabase ou site.
+
+### Restrição da correção automática (decisão de 2026-11-02)
+- A correção automática de preços **somente poderá elevar o preço sugerido** quando o custo e as margens exigirem. **Não reduzir automaticamente** o preço sugerido devido a quedas de custos.
+- O valor de R$ 55,00/g permanece referência de cálculo; variações de custo para baixo podem ser informadas à administração, mas qualquer redução comercial dependerá de decisão expressa da By Prata.
+- O sistema não muda automaticamente preços publicados; toda alteração do catálogo exige aprovação administrativa, com registro da memória de cálculo.
