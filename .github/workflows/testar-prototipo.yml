@@ -1,0 +1,25 @@
+name: Validar protótipo By Prata
+on:
+  pull_request:
+    paths:
+      - 'prototipo-vendedora/**'
+      - '.github/workflows/testar-prototipo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testar regras comerciais
+        working-directory: prototipo-vendedora
+        run: npm test
+      - name: Validar sintaxe JavaScript
+        run: |
+          node --check prototipo-vendedora/auth-admin.js
+          node --check prototipo-vendedora/supabase-config.js
+          node --check prototipo-vendedora/rascunhos.js
