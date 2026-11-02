@@ -43,3 +43,11 @@ Atualizado: 2026-11-01. Situação: decisões de planejamento, sem implementaç�
 - Compartilhar apenas informações necessárias ao atendimento, com comunicação transparente à cliente e gestão de preferências; preservar registro auditável da origem do relacionamento e da escolha.
 - A compra direta anterior permanece atribuída ao canal original. Atribuição e comissão por vendas posteriores seguem regras comerciais e dependerão do vínculo e da origem efetiva da venda, sem comissões retroativas.
 - Pendente: definir procedimento de mudança ou encerramento do vínculo de atendimento pela cliente e tratamentos de potenciais conflitos de atribuição.
+
+## Precificação automática por custo e margem (aprovado em 2026-11-02)
+- R$ 55,00 por grama é **referência inicial de cálculo**, não preço final fixo obrigatório para todo produto.
+- O sistema de precificação poderá **corrigir automaticamente o preço calculado para cima** quando necessário para cobrir custo real da peça, perdas de prata, pedras, complexidade de produção, embalagem, taxas, comissões, premiações, logística e demais custos aplicáveis, preservando **margem de contribuição mínima de 20%** conforme política comercial.
+- Considerar preço uniforme para numerações do mesmo modelo, protegendo a margem na variante de maior custo, salvo futura decisão formal em contrário.
+- Separar **preço sugerido/corrigido automaticamente** de **preço de venda publicado**: a By Prata mantém controle exclusivo dos preços e aprovação de alterações de preço visíveis no catálogo; consultoras não os modificam. Não aplicar reajustes silenciosos ao site oficial.
+- Registrar memória de cálculo (peso, custos, premissas, preço-base, preço corrigido, margem estimada, data e versão). Custos e tributos ainda não validados devem ser sinalizados antes da aprovação.
+- Esta decisão autoriza a regra de **cálculo automático no planejamento**, não configura implementação ou publicação automática no Supabase ou site.
