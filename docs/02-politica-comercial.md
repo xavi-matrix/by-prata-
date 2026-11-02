@@ -36,3 +36,10 @@ Atualizado: 2026-11-01. Situação: decisões de planejamento, sem implementaç�
 - A disponibilidade dessa opção e o registro da preferência devem ser claros. Encaminhar somente os dados necessários para atendimento, conforme base legal aplicável e transparência sobre o compartilhamento.
 - A eventual comissão sobre vendas futuras, regra de atribuição da consultora escolhida e possibilidade de alterar/desvincular o atendimento ainda precisam ser especificadas. Não atribuir comissão retroativa à compra direta original por simples encaminhamento posterior.
 - Esta é uma regra de planejamento. Nenhuma integração CRM, disparo de mensagem ou alteração no site é implementada pelo registro.
+
+### Escolha de consultora por cliente direta (aprovado em 2026-11-02)
+- Cliente originada diretamente no site, inicialmente atendida pela By Prata, pode **escolher uma consultora já conhecida** ou **solicitar indicação da By Prata**.
+- Na indicação, considerar região e disponibilidade de atendimento, sem vinculação automática sem escolha da cliente.
+- Compartilhar apenas informações necessárias ao atendimento, com comunicação transparente à cliente e gestão de preferências; preservar registro auditável da origem do relacionamento e da escolha.
+- A compra direta anterior permanece atribuída ao canal original. Atribuição e comissão por vendas posteriores seguem regras comerciais e dependerão do vínculo e da origem efetiva da venda, sem comissões retroativas.
+- Pendente: definir procedimento de mudança ou encerramento do vínculo de atendimento pela cliente e tratamentos de potenciais conflitos de atribuição.
